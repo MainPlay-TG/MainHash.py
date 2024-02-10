@@ -1,3 +1,4 @@
+__version_tuple__=(0,0,4)
 try:
   import MainHash.blake2b as blake2b
 except Exception as error:
@@ -46,19 +47,20 @@ try:
   import MainHash.sha512 as sha512
 except Exception as error:
   print(error)
-try:
-  import MainHash.shake_128 as shake_128
-except Exception as error:
-  print(error)
-try:
-  import MainHash.shake_256 as shake_256
-except Exception as error:
-  print(error)
+# try:
+  # import MainHash.shake_128 as shake_128
+# except Exception as error:
+  # print(error)
+# try:
+  # import MainHash.shake_256 as shake_256
+# except Exception as error:
+  # print(error)
 # Данные о модуле
-__version__="0.0.1"
+__version__="{}.{}.{}".format(*__version_tuple__)
 __depends__={
   "required":[
-    "hashlib"
+    "hashlib",
+    "mainshortcuts"
     ],
   "optional":[]
   }
@@ -98,16 +100,21 @@ __functions__=[
   "sha3_512.text",
   "sha512.file",
   "sha512.path",
-  "sha512.text",
-  "shake_128.file",
-  "shake_128.path",
-  "shake_128.text",
-  "shake_256.file",
-  "shake_256.path",
-  "shake_256.text"
+  "sha512.text"
+  # "shake_128.file",
+  # "shake_128.path",
+  # "shake_128.text",
+  # "shake_256.file",
+  # "shake_256.path",
+  # "shake_256.text"
   ]
-__variables__=[]
 __classes__={}
+__variables__=[]
+__all__=__functions__+__variables__+list(__classes__.keys())
+__scripts__=[
+  "MainHash-check",
+  "MainHash-gen"
+  ]
 _algs=[
   "blake2b",
   "blake2s",
@@ -120,7 +127,12 @@ _algs=[
   "sha3_256",
   "sha3_384",
   "sha3_512",
-  "sha512",
-  "shake_128",
-  "shake_256"
+  "sha512"
+  # "shake_128",
+  # "shake_256"
   ]
+__all__.sort()
+__functions__.sort()
+__scripts__.sort()
+__variables__.sort()
+_algs.sort()
