@@ -109,8 +109,10 @@ def _genFile(path,list=[],list_mode="b"):
     else:
       raise Exception('Invalid list mode. Use "black" or "white", not "{0}"'.format(list_mode))
   d={}
+  with open(path,"rb") as f:
+    b=f.read()
   for alg in algs:
-    d[alg]=getattr(mh,alg).path(path)
+    d[alg]=getattr(mh,alg).bytes(b)
   os.chdir(root)
   return d
 def _genDir(path=os.getcwd(),**kwargs):

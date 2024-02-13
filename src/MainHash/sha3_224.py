@@ -12,3 +12,5 @@ def file(f):
   return h.hexdigest()
 def text(t,encoding="utf-8"):
   return _hl.sha3_224(str(t).encode(encoding)).hexdigest()
+def bytes(b):
+  return _hl.sha3_224(bytes).hexdigest()

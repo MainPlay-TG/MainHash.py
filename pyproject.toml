@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "mainhash"
-version = "0.0.2"
-description = ""
+version = "0.0.5"
+description = "Simplifying checksum generation"
 authors = ["MainPlay TG <xbox.roman6666666666@gmail.com>"]
 readme = "README.md"
 repository = "https://github.com/MainPlay-TG/MainHash.py"
@@ -14,8 +14,10 @@ python = "^3.8"
 mainshortcuts = "^1.5.7"
 
 [tool.poetry.scripts]
-MainHash-gen = "MainHash.script:gen"
 MainHash-check = "MainHash.script:check"
+MH-check = "MainHash.script:check"
+MH-gen = "MainHash.script:gen"
+MainHash-gen = "MainHash.script:gen"
 
 [build-system]
 requires = ["poetry-core"]

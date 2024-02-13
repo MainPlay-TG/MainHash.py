@@ -1,4 +1,4 @@
-__version_tuple__=(0,0,4)
+__version_tuple__=(0,0,5)
 try:
   import MainHash.blake2b as blake2b
 except Exception as error:
@@ -64,56 +64,15 @@ __depends__={
     ],
   "optional":[]
   }
-__functions__=[
-  "blake2b.file",
-  "blake2b.path",
-  "blake2b.text",
-  "blake2s.file",
-  "blake2s.path",
-  "blake2s.text",
-  "md5.file",
-  "md5.path",
-  "md5.text",
-  "sha1.file",
-  "sha1.path",
-  "sha1.text",
-  "sha224.file",
-  "sha224.path",
-  "sha224.text",
-  "sha256.file",
-  "sha256.path",
-  "sha256.text",
-  "sha384.file",
-  "sha384.path",
-  "sha384.text",
-  "sha3_224.file",
-  "sha3_224.path",
-  "sha3_224.text",
-  "sha3_256.file",
-  "sha3_256.path",
-  "sha3_256.text",
-  "sha3_384.file",
-  "sha3_384.path",
-  "sha3_384.text",
-  "sha3_512.file",
-  "sha3_512.path",
-  "sha3_512.text",
-  "sha512.file",
-  "sha512.path",
-  "sha512.text"
-  # "shake_128.file",
-  # "shake_128.path",
-  # "shake_128.text",
-  # "shake_256.file",
-  # "shake_256.path",
-  # "shake_256.text"
-  ]
+__functions__=[]
 __classes__={}
 __variables__=[]
 __all__=__functions__+__variables__+list(__classes__.keys())
 __scripts__=[
   "MainHash-check",
-  "MainHash-gen"
+  "MainHash-gen",
+  "MH-gen",
+  "MH-check",
   ]
 _algs=[
   "blake2b",
@@ -127,10 +86,19 @@ _algs=[
   "sha3_256",
   "sha3_384",
   "sha3_512",
-  "sha512"
+  "sha512",
   # "shake_128",
-  # "shake_256"
+  # "shake_256",
   ]
+_alg_functions=[
+  "path",
+  "file",
+  "text",
+  "bytes",
+  ]
+for i1 in _algs:
+  for i2 in _alg_functions:
+    __functions__.append(f"{i1}.{i2}")
 __all__.sort()
 __functions__.sort()
 __scripts__.sort()
