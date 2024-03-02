@@ -91,8 +91,7 @@ class _print:
     ms.json.print(self.data)
 def _genFile(path,list=[],list_mode="b"):
   root=os.getcwd()
-  info=ms.path.info(path)
-  if info["type"]!="file":
+  if not os.path.isfile(path):
     raise Exception("This is not a file")
   dir=os.path.dirname(path)
   if dir=="":
@@ -109,10 +108,8 @@ def _genFile(path,list=[],list_mode="b"):
     else:
       raise Exception('Invalid list mode. Use "black" or "white", not "{0}"'.format(list_mode))
   d={}
-  with open(path,"rb") as f:
-    b=f.read()
   for alg in algs:
-    d[alg]=getattr(mh,alg).bytes(b)
+    d[alg]=getattr(mh,alg).path(path)
   os.chdir(root)
   return d
 def _genDir(path=os.getcwd(),**kwargs):
@@ -126,7 +123,10 @@ def _genDir(path=os.getcwd(),**kwargs):
   d={}
   for i in files:
     if not i.lower().endswith(".mainhash"):
-      d[os.path.relpath(i,path)]=_genFile(i,**kwargs)
+      try:
+        d[os.path.relpath(i,path).replace("\\","/")]=_genFile(i,**kwargs)
+      except:
+        pass
   os.chdir(root)
   return d
 def _genAuto(path,**kwargs):
