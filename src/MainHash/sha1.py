@@ -13,4 +13,4 @@ def file(f):
 def text(t,encoding="utf-8"):
   return _hl.sha1(str(t).encode(encoding)).hexdigest()
 def bytes(b):
-  return _hl.sha1(bytes).hexdigest()
+  return _hl.sha1(b).hexdigest()

@@ -1,3 +1,0 @@
-nano src/MainHash/__init__.py
-nano pyproject.toml
-poetry publish --build

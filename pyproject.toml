@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mainhash"
-version = "0.0.5"
+version = "0.0.10"
 description = "Simplifying checksum generation"
 authors = ["MainPlay TG <xbox.roman6666666666@gmail.com>"]
 readme = "README.md"

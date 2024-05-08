@@ -1,3 +1,0 @@
-pip install -U mainhash
-sleep 10
-pip install -U mainhash

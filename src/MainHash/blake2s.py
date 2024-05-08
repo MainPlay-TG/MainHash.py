@@ -13,4 +13,4 @@ def file(f):
 def text(t,encoding="utf-8"):
   return _hl.blake2s(str(t).encode(encoding)).hexdigest()
 def bytes(b):
-  return _hl.blake2s(bytes).hexdigest()
+  return _hl.blake2s(b).hexdigest()

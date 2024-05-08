@@ -1,4 +1,4 @@
-__version_tuple__=(0,0,6)
+__version_tuple__=(0,0,10)
 import MainHash.all as all
 import MainHash.blake2b as blake2b
 import MainHash.blake2s as blake2s
