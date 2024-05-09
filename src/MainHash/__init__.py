@@ -1,4 +1,4 @@
-__version_tuple__=(0,0,10)
+__version_tuple__ = (0, 0, 10)
 import MainHash.all as all
 import MainHash.blake2b as blake2b
 import MainHash.blake2s as blake2s
@@ -13,31 +13,31 @@ import MainHash.sha3_384 as sha3_384
 import MainHash.sha3_512 as sha3_512
 import MainHash.sha512 as sha512
 # Данные о модуле
-__version__="{}.{}.{}".format(*__version_tuple__)
-__depends__={
-  "required":[
-    "hashlib",
-    "mainshortcuts"
+__version__ = "{}.{}.{}".format(*__version_tuple__)
+__depends__ = {
+    "required": [
+        "hashlib",
+        "mainshortcuts"
     ],
-  "optional":[]
-  }
-__functions__=[]
-__classes__={}
-__variables__=[]
-__all__=__functions__+__variables__+list(__classes__.keys())
-__scripts__=[
-  "MainHash-check",
-  "MainHash-gen",
-  "MH-gen",
-  "MH-check",
-  ]
+    "optional": []
+}
+__functions__ = []
+__classes__ = {}
+__variables__ = []
+__all__ = __functions__ + __variables__ + list(__classes__.keys())
+__scripts__ = [
+    "MainHash-check",
+    "MainHash-gen",
+    "MH-gen",
+    "MH-check",
+]
 from MainHash.__algs import _algs
-_alg_functions=[
-  "path",
-  "file",
-  "text",
-  "bytes",
-  ]
+_alg_functions = [
+    "path",
+    "file",
+    "text",
+    "bytes",
+]
 for i1 in _algs:
   for i2 in _alg_functions:
     __functions__.append(f"{i1}.{i2}")
